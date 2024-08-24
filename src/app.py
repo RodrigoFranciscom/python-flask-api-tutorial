@@ -13,7 +13,7 @@ def add_new_todo():
     request_body = request.json
     print("Incoming request with the following body", request_body)
     todos.append(request_body)
-    return 'Response for the POST todo'
+    return jsonify(todos)
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
